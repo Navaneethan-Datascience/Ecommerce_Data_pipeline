@@ -87,16 +87,6 @@ python scripts/load.py
 - Loads curated tables into `warehouse.db` (SQLite).  
 - After loading, you can connect with any SQLite browser or BI tool to run queries.
 
-Example query (using `sqlite3` CLI):
-
-```bash
-sqlite3 warehouse.db
-SELECT order_date, SUM(total_amount) AS daily_revenue
-FROM fact_orders
-GROUP BY order_date
-ORDER BY order_date;
-```
-
 ---
 
 ## Use Cases
