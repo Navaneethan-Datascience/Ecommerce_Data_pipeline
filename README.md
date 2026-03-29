@@ -54,7 +54,7 @@ Ecommerce_pipeline/
 3. **Load (Curated to Warehouse)**  
    - `load.py` loads curated tables into `warehouse.db` (SQLite) to simulate loading into a cloud data warehouse such as Azure Synapse or Azure SQL Database.
    
---
+---
 
 ## Running the Pipeline
 
