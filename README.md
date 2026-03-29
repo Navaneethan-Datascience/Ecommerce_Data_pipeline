@@ -1,7 +1,6 @@
 # Azure E-commerce Data Pipeline
 
-This repository contains an end-to-end **data** pipeline for an e-commerce platform, inspired by a modern Azure data engineering stack and medallion architecture (raw → processed → curated). The goal is to simulate how orders data flows from source files into a data lake and finally into an analytics-ready warehouse.[web:5][web:9][web:10]
-
+This repository contains an end-to-end **data** pipeline for an e-commerce platform, inspired by a modern Azure data engineering stack and medallion architecture (raw → processed → curated). The goal is to simulate how orders data flows from source files into a data lake and finally into an analytics-ready warehouse.
 ---
 
 ## Project Overview
@@ -11,9 +10,9 @@ The project demonstrates a simplified version of an Azure-centric e-commerce ana
 - Land raw e-commerce orders data into a `data_lake/raw` zone.
 - Clean and transform the data into the `data_lake/processed` zone.
 - Aggregate and model data into curated tables in `data_lake/curated`.
-- Load curated data into a warehouse (`warehouse.db`) that can be queried by BI tools or downstream applications.[web:5][web:9][web:10]
+- Load curated data into a warehouse (`warehouse.db`) that can be queried by BI tools or downstream applications.
 
-Although this implementation runs locally with Python scripts and a SQLite warehouse, the structure mirrors real-world Azure services such as Azure Data Lake Storage, Azure Data Factory, and Azure Synapse/Databricks.[web:3][web:5][web:9]
+Although this implementation runs locally with Python scripts and a SQLite warehouse, the structure mirrors real-world Azure services such as Azure Data Lake Storage, Azure Data Factory, and Azure Synapse/Databricks.
 
 ---
 
