@@ -18,7 +18,7 @@ Although this implementation runs locally with Python scripts and a SQLite wareh
 
 ## Architecture and Folder Structure
 
-The repository follows a simple medallion-style layout (raw, processed, curated) commonly used in modern data lakehouse architectures.[web:9][web:10]
+The repository follows a simple medallion-style layout (raw, processed, curated) commonly used in modern data lakehouse architectures.
 
 ```bash
 Ecommerce_pipeline/
@@ -45,14 +45,15 @@ Ecommerce_pipeline/
 
 1. **Ingestion (Landing to Raw)**  
    - `ingestion.py` reads source files such as `data/orders.csv`.  
-   - Raw data is copied as-is into `data_lake/raw` to preserve the original source.[web:3][web:5][web:10]
-
+   - Raw data is copied as-is into `data_lake/raw` to preserve the original source.
+     
 2. **Transformation (Raw to Processed/Curated)**  
    - `transform.py` cleans, validates, and enriches the raw data (types, missing values, derived fields).  
-   - Clean data is written to `data_lake/processed`, and aggregated/modelled tables are written to `data_lake/curated` (for example, daily revenue, top products, customer metrics).[web:5][web:9][web:10]
+   - Clean data is written to `data_lake/processed`, and aggregated/modelled tables are written to `data_lake/curated` (for example, daily revenue, top products, customer metrics).
 
 3. **Load (Curated to Warehouse)**  
-   - `load.py` loads curated tables into `warehouse.db` (SQLite) to simulate loading into a cloud data warehouse such as Azure Synapse or Azure SQL Database.[web:5][web:9]
+   - `load.py` loads curated tables into `warehouse.db` (SQLite) to simulate loading into a cloud data warehouse such as Azure Synapse or Azure SQL Database.
+   
 
 ---
 
@@ -62,9 +63,9 @@ Ecommerce_pipeline/
 
 - Python 3.8+
 - `pip` for installing dependencies
-- SQLite (bundled with most Python installations via the `sqlite3` module)[web:5][web:11]
+- SQLite (bundled with most Python installations via the `sqlite3` module)
 
-(Optional Azure alignment: In a cloud deployment, these components would map to Azure Data Lake Storage, Azure Data Factory/Databricks for orchestration and transformation, and Azure Synapse Analytics for warehousing.)[web:3][web:5][web:9]
+(Optional Azure alignment: In a cloud deployment, these components would map to Azure Data Lake Storage, Azure Data Factory/Databricks for orchestration and transformation, and Azure Synapse Analytics for warehousing.).
 
 ### Installation
 
@@ -101,8 +102,8 @@ python scripts/ingestion.py
 ```
 
 - Reads `data/orders.csv`.  
-- Writes raw copies into `data_lake/raw` (e.g., `orders_raw.csv`).[web:3][web:5]
-
+- Writes raw copies into `data_lake/raw` (e.g., `orders_raw.csv`).
+  
 ### 2. Transform data
 
 ```bash
@@ -110,8 +111,8 @@ python scripts/transform.py
 ```
 
 - Cleans and standardizes the raw data (schemas, data types, derived metrics).  
-- Outputs processed datasets to `data_lake/processed` and curated analytics tables to `data_lake/curated`.[web:5][web:9][web:10]
-
+- Outputs processed datasets to `data_lake/processed` and curated analytics tables to `data_lake/curated`.
+  
 ### 3. Load curated data into the warehouse
 
 ```bash
@@ -119,7 +120,7 @@ python scripts/load.py
 ```
 
 - Loads curated tables into `warehouse.db` (SQLite).  
-- After loading, you can connect with any SQLite browser or BI tool to run queries.[web:5][web:9][web:11]
+- After loading, you can connect with any SQLite browser or BI tool to run queries.
 
 Example query (using `sqlite3` CLI):
 
@@ -139,32 +140,15 @@ This project is designed as a learning and portfolio-friendly example for:
 
 - Practicing core data engineering patterns (ingest, transform, load, medallion layers).  
 - Prototyping an Azure-style e-commerce analytics pipeline locally before deploying to the cloud.  
-- Demonstrating end-to-end data flow in interviews or technical blogs.[web:5][web:8][web:9][web:11]
+- Demonstrating end-to-end data flow in interviews or technical blogs.
 
 ---
 
 ## Possible Azure Mapping
 
-While the implementation here is local, you can map each layer to managed Azure services:[web:3][web:5][web:9]
+While the implementation here is local, you can map each layer to managed Azure services:
 
 - **Data Lake** → Azure Data Lake Storage Gen2.  
-- **Orchestration & Ingestion** → Azure Data Factory, Azure Logic Apps, or Azure Databricks jobs.[web:2][web:3][web:4][web:5]  
-- **Transformations** → Azure Databricks or Azure Synapse Spark pools.[web:5][web:9]  
-- **Warehouse** → Azure Synapse Dedicated SQL Pool or Azure SQL Database.[web:5][web:9]
-
-This makes the repository a good starting point for designing an end-to-end Azure-based e-commerce analytics solution.[web:5][web:9][web:10][web:11]
-
----
-
-## Future Improvements
-
-- Add unit tests for each script (`ingestion.py`, `transform.py`, `load.py`).  
-- Introduce configuration files (YAML/JSON) to manage paths and parameters.  
-- Replace local scheduling with orchestration (e.g., Azure Data Factory pipelines or GitHub Actions).  
-- Extend the schema to include customers, products, and inventory to support richer analytics and dashboards.[web:5][web:8][web:9][web:11]
-
----
-
-## License
-
-Add your preferred license here (for example, MIT) so others know how they can use and contribute to this project.[web:11]
+- **Orchestration & Ingestion** → Azure Data Factory, Azure Logic Apps, or Azure Databricks jobs.
+- **Transformations** → Azure Databricks or Azure Synapse Spark pools.  
+- **Warehouse** → Azure Synapse Dedicated SQL Pool or Azure SQL Database.
