@@ -108,7 +108,7 @@ While the implementation here is local, you can map each layer to managed Azure 
 - **Transformations** → Azure Databricks or Azure Synapse Spark pools.  
 - **Warehouse** → Azure Synapse Dedicated SQL Pool or Azure SQL Database.
 
-## Learned
+## Gained Knowledge
 
 - Learned how to structure a data pipeline with raw, processed, and curated layers.
 - Practiced building ETL steps using separate Python scripts for ingestion, transform, and load.
