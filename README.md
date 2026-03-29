@@ -54,42 +54,7 @@ Ecommerce_pipeline/
 3. **Load (Curated to Warehouse)**  
    - `load.py` loads curated tables into `warehouse.db` (SQLite) to simulate loading into a cloud data warehouse such as Azure Synapse or Azure SQL Database.
    
-
----
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.8+
-- `pip` for installing dependencies
-- SQLite (bundled with most Python installations via the `sqlite3` module)
-
-(Optional Azure alignment: In a cloud deployment, these components would map to Azure Data Lake Storage, Azure Data Factory/Databricks for orchestration and transformation, and Azure Synapse Analytics for warehousing.).
-
-### Installation
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/<your-username>/Ecommerce_Data_pipeline.git
-   cd Ecommerce_Data_pipeline
-   ```
-
-2. (Optional) Create and activate a virtual environment:
-
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate   # On Windows: .venv\Scripts\activate
-   ```
-
-3. Install dependencies (example):
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
----
+--
 
 ## Running the Pipeline
 
