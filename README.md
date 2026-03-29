@@ -107,3 +107,11 @@ While the implementation here is local, you can map each layer to managed Azure 
 - **Orchestration & Ingestion** → Azure Data Factory, Azure Logic Apps, or Azure Databricks jobs.
 - **Transformations** → Azure Databricks or Azure Synapse Spark pools.  
 - **Warehouse** → Azure Synapse Dedicated SQL Pool or Azure SQL Database.
+
+## Learned
+
+- Learned how to structure a data pipeline with raw, processed, and curated layers.
+- Practiced building ETL steps using separate Python scripts for ingestion, transform, and load.
+- Understood how a local pipeline (files + SQLite) relates to Azure data services in the cloud.
+- Improved my skills in organizing a data engineering project with a clear folder and script structure.
+- Gained experience handling data quality issues while moving data from source to analytics-ready tables.
